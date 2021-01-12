@@ -1,12 +1,12 @@
 ![alt tag](images/repo-logo.jpg)
 
-# weride - Wordpress Custom Theme #
+# WeRide - Wordpress Custom Theme #
 
 * Version: 1.0.0
 * Design: [Robert Ochoa](http://www.robertochoa.com.ve/?utm_source=github_link&utm_medium=link&utm_content=weride)
 * Development: [Robert Ochoa](http://www.robertochoa.com.ve/?utm_source=github_link&utm_medium=link&utm_content=weride)
 
-Tema diseñado por [Robert Ochoa](http://www.robertochoa.com.ve/?utm_source=github_link&utm_medium=link&utm_content=weride) para weride.
+Tema diseñado por [Robert Ochoa](http://www.robertochoa.com.ve/?utm_source=github_link&utm_medium=link&utm_content=weride) para WeRide.
 Este tema custom fue construido en su totalidad, pasando por su etapa de Wireframing, rearmado, version anterior e implementación en hosting externo.
 
 ### Componentes Principales ###
