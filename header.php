@@ -52,47 +52,53 @@
         <div class="row no-gutters">
             <div class="top-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="container">
-                    <div class="row">
+                    <div class="row align-items-center">
                         <div class="top-header-left col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                             <ul>
                                 <li><a href="<?php echo wc_get_page_permalink('myaccount'); ?>"><?php _e('Mi Cuenta', 'weride'); ?></a></li>
                                 <li><a href="<?php echo wc_get_page_permalink('myaccount'); ?>"><?php _e('Wishlist', 'weride'); ?></a></li>
                             </ul>
                         </div>
-                        <div class="top-header-right col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                        <div class="top-header-right text-right col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                            <a href=""><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-twitter"></i></a>
+                            <a href=""><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="the-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <nav class="navbar navbar-expand-md" role="navigation">
-                    <a class="navbar-brand" href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>">
-                        <?php $custom_logo_id = get_theme_mod('custom_logo'); ?>
-                        <?php $image = wp_get_attachment_image_src($custom_logo_id, 'logo'); ?>
-                        <?php if (!empty($image)) { ?>
-                            <img src="<?php echo $image[0]; ?>" alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid img-logo" />
-                        <?php } else { ?>
-                            Navbar
-                        <?php } ?>
-                    </a>
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location'  => 'header_menu',
-                        'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
-                        'container'       => 'div',
-                        'container_class' => 'collapse navbar-collapse',
-                        'container_id'    => 'bs-example-navbar-collapse-1',
-                        'menu_class'      => 'navbar-nav ml-auto',
-                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                        'walker'          => new WP_Bootstrap_Navwalker(),
-                    ));
-                    ?>
-
-                </nav>
+            <nav class="the-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="header-logo col-3">
+                            <a class="navbar-brand" href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>">
+                                <?php $custom_logo_id = get_theme_mod('custom_logo'); ?>
+                                <?php $image = wp_get_attachment_image_src($custom_logo_id, 'logo'); ?>
+                                <?php if (!empty($image)) { ?>
+                                <img src="<?php echo $image[0]; ?>" alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid img-logo" />
+                                <?php } else { ?>
+                                Navbar
+                                <?php } ?>
+                            </a>
+                        </div>
+                        <div class="header-menu-extended col-9">
+                            <div class="header-menu-container">
+                                <?php
+                                wp_nav_menu(array(
+                                    'theme_location'  => 'header_menu',
+                                    'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                                    'container'       => 'div',
+                                    'menu_class'      => 'custom-navbar-nav',
+                                ));
+                                ?>
+                            </div>
+                            <div class="header-menu-icons">
+                                <a href=""><i class="fa fa-heart-o"></i><span class="badge badge-success">0</span></a>
+                                <a href><i class="fa fa-shopping-bag"></i><span class="badge badge-success">0</span> <span class="cart-total">$ 0.00</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>

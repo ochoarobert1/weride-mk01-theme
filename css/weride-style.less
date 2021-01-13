@@ -7,10 +7,13 @@
 VARIABLES
 -------------------------------------------------------------- */
 
-@mainfont: 'Open Sans', sans-serif;
-@secondfont: 'Open Sans', sans-serif;
+@mainfont: 'Noto Sans JP', sans-serif;
+//@secondfont: 'Open Sans', sans-serif;
 @black: #000000;
 @white: #ffffff;
+@dgray: #333333;
+@sgray: #A5A5A5;
+@red: #ac1b1b;
 
 /* --------------------------------------------------------------
 BODY DEFAULTS
@@ -37,6 +40,7 @@ a {
     .transition(all .2s ease-in-out);
 
     &:hover {
+        color: @red;
         text-decoration: none;
     }
 }
@@ -78,11 +82,196 @@ a {
 /* --------------------------------------------------------------
 1.- HEADER
 -------------------------------------------------------------- */
+.top-header {
+    background: @dgray;
+    color: @white;
+    padding: .8rem;
+    padding-top: 3px;
+
+    & .top-header-left {
+        & ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            .display(flex);
+            align-items: center;
+            justify-content: flex-start;
+
+            & li {
+                & a {
+                    position: relative;
+                    color: @sgray;
+                    margin-right: 5px;
+                    padding: 0.5rem;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        color: @red;
+                    }
+                }
+
+                &:nth-child(1) {
+                    & a:after {
+                        content: '';
+                        background: @sgray;
+                        position: absolute;
+                        top: 10px;
+                        right: -3px;
+                        height: 15px;
+                        width: 1px;
+                    }
+                }
+            }
+        }
+    }
+
+    & .top-header-right {
+        & a {
+            color: @sgray;
+            margin-left: 5px;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+
+            &:hover {
+                color: @red;
+            }
+        }
+    }
+}
+
+.the-header {
+    background: @white;
+    color: @black;
+
+    & .header-logo {
+        & img {
+            max-width: 150px;
+        }
+    }
+
+    & .header-menu-extended {
+        .display(flex);
+        align-items: center;
+        justify-content: flex-end;
+
+        & .header-menu-container {
+            & .custom-navbar-nav {
+                .display(flex);
+                align-items: center;
+                justify-content: flex-end;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                & .nav-link {
+                    display: block;
+                    padding: .5rem 1rem;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                    color: black;
+                    font-weight: 400;
+
+                    &:hover {
+                        color: @red;
+                    }
+                }
+            }
+        }
+
+        & .header-menu-icons {
+            & a {
+                position: relative;
+                margin-left: 20px;
+
+                & .badge {
+                    position: absolute;
+                    top: 0;
+                    top: -10px;
+                    left: 20px;
+                    border-radius: 100%;
+                }
+
+                &:nth-child(1) {
+                    margin-left: 5px;
+                }
+            }
+
+            & .fa {
+                font-size: 2rem;
+                color: #b3b3b3;
+            }
+
+            & .cart-total {
+                color: @black;
+                font-size: 1.5rem;
+                margin-left: 10px;
+                font-weight: 700;
+            }
+        }
+    }
+}
 
 /* --------------------------------------------------------------
 2.- FOOTER
 -------------------------------------------------------------- */
+.the-footer {
+    background: @black;
+    color: @white;
+    padding: 2rem 1rem;
+
+    & .footer-item {
+        & ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        & .widgettitle {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+    }
+
+}
+
+.footer-copy {
+    background: @black;
+    color: @white;
+    padding: 1rem;
+
+    & h5 {
+        font-size: 0.9rem;
+        font-weight: 100;
+        margin: 0;
+    }
+}
 
 /* --------------------------------------------------------------
 3.- HOME
 -------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------
+4.- PRODUCT
+-------------------------------------------------------------- */
+.product_list_widget {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & li {
+        flex: 0 0 24%;
+
+        & .product-title {
+            display: block;
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+        }
+    }
+}
