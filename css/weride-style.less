@@ -7,10 +7,13 @@
 VARIABLES
 -------------------------------------------------------------- */
 
-@mainfont: 'Open Sans', sans-serif;
-@secondfont: 'Open Sans', sans-serif;
+@mainfont: 'Noto Sans JP', sans-serif;
+//@secondfont: 'Open Sans', sans-serif;
 @black: #000000;
 @white: #ffffff;
+@dgray: #333333;
+@sgray: #A5A5A5;
+@red: #ac1b1b;
 
 /* --------------------------------------------------------------
 BODY DEFAULTS
@@ -37,6 +40,7 @@ a {
     .transition(all .2s ease-in-out);
 
     &:hover {
+        color: @red;
         text-decoration: none;
     }
 }
@@ -78,11 +82,348 @@ a {
 /* --------------------------------------------------------------
 1.- HEADER
 -------------------------------------------------------------- */
+.top-header {
+    background: @dgray;
+    color: @white;
+    padding: .8rem;
+    padding-top: 3px;
+
+    & .top-header-left {
+        & ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            .display(flex);
+            align-items: center;
+            justify-content: flex-start;
+
+            & li {
+                & a {
+                    position: relative;
+                    color: @sgray;
+                    margin-right: 5px;
+                    padding: 0.5rem;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+
+                    .fa {
+                        display: none;
+                    }
+
+                    &:hover {
+                        color: @red;
+                    }
+                }
+
+                &:nth-child(1) {
+                    & a:after {
+                        content: '';
+                        background: @sgray;
+                        position: absolute;
+                        top: 10px;
+                        right: -3px;
+                        height: 15px;
+                        width: 1px;
+                    }
+                }
+            }
+        }
+    }
+
+    & .top-header-right {
+        & a {
+            color: @sgray;
+            margin-left: 5px;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+
+            &:hover {
+                color: @red;
+            }
+        }
+    }
+}
+
+.the-header {
+    background: @white;
+    color: @black;
+
+    & .header-logo {
+        & img {
+            max-width: 150px;
+        }
+    }
+
+    & .header-menu-extended {
+        .display(flex);
+        align-items: center;
+        justify-content: flex-end;
+
+        & .header-menu-container {
+            & .custom-navbar-nav {
+                .display(flex);
+                align-items: center;
+                justify-content: flex-end;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                & .nav-link {
+                    display: block;
+                    padding: .5rem 1rem;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                    color: black;
+                    font-weight: 400;
+
+                    &:hover {
+                        color: @red;
+                    }
+                }
+            }
+        }
+
+        & .header-menu-icons {
+            & a {
+                position: relative;
+                margin-left: 20px;
+
+                & .badge {
+                    position: absolute;
+                    top: 0;
+                    top: -10px;
+                    left: 20px;
+                    border-radius: 100%;
+                }
+
+                &:nth-child(1) {
+                    margin-left: 5px;
+                }
+            }
+
+            & .fa {
+                font-size: 2rem;
+                color: #b3b3b3;
+            }
+
+            & .cart-total {
+                color: @black;
+                font-size: 1.5rem;
+                margin-left: 10px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.header-mobile-menu-container {
+    & .custom-navbar-nav {
+        list-style: none;
+        padding: 0;
+
+        & li {
+            & a {
+                color: @black;
+            }
+        }
+    }
+}
+
+.header-menu-hidden {
+    display: none;
+}
+
+.menu-mobile-btn {
+    padding: 5px 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
 
 /* --------------------------------------------------------------
 2.- FOOTER
 -------------------------------------------------------------- */
+.the-footer {
+    background: #071112;
+    color: @white;
+    padding: 2rem 1rem;
+
+    & .footer-item {
+        & ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        & .widgettitle {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        & .widget_nav_menu a {
+            padding: 5px 0;
+            color: white;
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        & .product-categories li a {
+            padding: 5px 0;
+            display: block;
+            color: white;
+            font-size: 1.1rem;
+        }
+    }
+
+}
+
+.footer-copy {
+    background: #071112;
+    color: @white;
+    padding: 1rem;
+
+    & h5 {
+        font-size: 0.9rem;
+        font-weight: 100;
+        margin: 0;
+    }
+}
 
 /* --------------------------------------------------------------
 3.- HOME
 -------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------
+4.- PRODUCT
+-------------------------------------------------------------- */
+.product_list_widget {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & li {
+        flex: 0 0 24%;
+        border: 1px solid #d0d0d0;
+        padding: 1rem;
+
+        & .product-title {
+            display: block;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            font-weight: 600;
+            color: black;
+        }
+
+        & .star-rating {
+            float: right;
+            overflow: hidden;
+            position: relative;
+            height: 1em;
+            line-height: 1;
+            font-size: 1em;
+            width: 5.4em;
+            font-family: star
+        }
+
+        & .star-rating::before {
+            content: "\73\73\73\73\73";
+            color: #d3ced2;
+            float: left;
+            top: 0;
+            left: 0;
+            position: absolute
+        }
+
+        & .star-rating span {
+            overflow: hidden;
+            float: left;
+            top: 0;
+            left: 0;
+            position: absolute;
+            padding-top: 1.5em
+        }
+
+        & .star-rating span::before {
+            content: "\53\53\53\53\53";
+            top: 0;
+            position: absolute;
+            left: 0
+        }
+
+    }
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2.6rem;
+    text-align: center;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #dadada;
+    padding: 1.2rem 1rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2.6rem;
+    text-align: center;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #dadada;
+    padding: 1.2rem 1rem;
+}
+
+.woocommerce-breadcrumb {
+    background: #e8e8e8;
+    color: #5FB04A !important;
+    padding: 1rem !important;
+    display: block;
+    padding-left: 20.6vw !important;
+    margin-bottom: 0 !important;
+}
+
+.sidebar-container {
+    & ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    & .product-categories li a {
+        color: black;
+        display: block;
+        padding: 5px 0;
+    }
+}
+
+.filter-mobile-button {
+    display: none;
+    width: 100%;
+    border: 0;
+    background: none;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+}
+
+button:focus {
+    outline: 0 !important;
+}
+
+.single_add_to_wishlist {
+    background: #5FB04A;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    &:hover {
+        color: @white;
+    }
+}

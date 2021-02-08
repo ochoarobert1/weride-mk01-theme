@@ -35,6 +35,19 @@
                 </div>
             </div>
         </div>
+        <div class="footer-copy col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-copy-left col-xl col-lg col-md col-sm-12 col-12">
+                        <h5>Copyright 2021 We Ride - Todos los derechos reservados</h5>
+                    </div>
+                    <div class="footer-copy-right text-right col-xl col-lg col-md col-sm-12 col-12">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/payments.png" alt="Payments" class="img-fluid" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </footer>
 <?php wp_footer() ?>
