@@ -60,9 +60,8 @@
                             </ul>
                         </div>
                         <div class="top-header-right text-right col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/MscPeruOficial" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/mscperuoficial" target="_blank"><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -70,7 +69,7 @@
             <nav class="the-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="container">
                     <div class="row">
-                        <div class="header-logo col-3">
+                        <div class="header-logo col-xl-3 col-lg-3 col-md-3 col-sm-3 col-4">
                             <a class="navbar-brand" href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>">
                                 <?php $custom_logo_id = get_theme_mod('custom_logo'); ?>
                                 <?php $image = wp_get_attachment_image_src($custom_logo_id, 'logo'); ?>
@@ -81,8 +80,8 @@
                                 <?php } ?>
                             </a>
                         </div>
-                        <div class="header-menu-extended col-9">
-                            <div class="header-menu-container">
+                        <div class="header-menu-extended col-xl-9 col-lg-9 col-md-9 col-sm-9 col-8">
+                            <div class="header-menu-container d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
                                 <?php
                                 wp_nav_menu(array(
                                     'theme_location'  => 'header_menu',
@@ -93,12 +92,25 @@
                                 ?>
                             </div>
                             <div class="header-menu-icons">
+
                                 <a href=""><i class="fa fa-heart-o"></i><span class="badge badge-success">0</span></a>
-                                <a href><i class="fa fa-shopping-bag"></i><span class="badge badge-success">0</span> <span class="cart-total">$ 0.00</span></a>
+                                <a href="<?php echo wc_get_cart_url(); ?>" class="cart-customlocation"><i class="fa fa-shopping-bag"></i><span class="badge badge-success"><?php echo WC()->cart->get_cart_contents_count(); ?></span> <span class="cart-total"><?php echo WC()->cart->get_cart_total(); ?></span></a>
+                                <div id="menuBtn" class="menu-mobile-btn d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block"><i class="fa fa-bars"></i></div>
                             </div>
+
+                        </div>
+                        <div id="menuMobile" class="header-mobile-menu-container col-12 header-menu-hidden">
+                            <?php
+                                wp_nav_menu(array(
+                                    'theme_location'  => 'header_menu',
+                                    'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                                    'container'       => 'div',
+                                    'menu_class'      => 'custom-navbar-nav',
+                                ));
+                                ?>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
